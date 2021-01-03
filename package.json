@@ -1,0 +1,25 @@
+{
+  "name": "jabber",
+  "version": "1.0.0",
+  "description": "Twitch chat client",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harry-Ross/jabber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Harry-Ross/jabber/issues"
+  },
+  "homepage": "https://github.com/Harry-Ross/jabber#readme",
+  "dependencies": {
+    "electron": "^11.1.1",
+    "jquery": "^3.5.1",
+    "ws": "^7.4.2"
+  }
+}
