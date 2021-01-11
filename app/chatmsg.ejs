@@ -1,3 +1,3 @@
 <% if (chatmsg) { %>
-    <span style="color: <%= chatmsg.metadata.color %>"><%= chatmsg.user %></span>: <span><%= chatmsg.content %></span>
+    <div class="chatmsg"><span style="color: <%= chatmsg.metadata.color %>"><%= chatmsg.user %></span>: <span class="chatmsg-content"><%= chatmsg.content %></span></div>
 <% } %>

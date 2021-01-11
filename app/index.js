@@ -54,11 +54,12 @@ function collectTags(messageString) {
 const ejs = require("ejs");
 
 function appendChatMsg(chatmsg) {
-    let chatbox = document.getElementById("chatbox");
+    const chatbox = document.getElementById("chatbox");
     ejs.renderFile('app/chatmsg.ejs', { chatmsg }, {}, function (err, str) {
         if (err) console.error(err)
         const parser = new DOMParser();
         let chatobj = parser.parseFromString(str, 'text/html');
-        chatbox.append(chatobj.body)
+        chatbox.appendChild(chatobj.body)
+        chatbox.scrollTop = chatbox.scrollHeight;
     })  
 }
