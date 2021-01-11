@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: darkslategrey
+}
+
+#chatbox {
+    height: 85vh;
+    background-color: #242424;
+    overflow-y: scroll;
+    border-left-style: solid;
+    border-color: black;
+    border-width: 10px;
+    padding-left: 7.5px;
+}
+
+span.chatmsg-content {
+    color: white;
+}
+
+div.chatmsg {
+    padding-top: 7.5px
+}
