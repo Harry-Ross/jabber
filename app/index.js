@@ -11,7 +11,10 @@ ws.on('open', function open() {
 })
 
 ws.on('message', function incoming(data) {
-    appendChatMsg(parseIRC(data));
+    let parsedData = parseIRC(data);
+    if (parsedData.type == "PRIVMSG") {
+        appendChatMsg(parsedData);
+    }
     if (data == "PING :tmi.twitch.tv") {
         ws.send("PONG :tmi.twitch.tv")
     }
@@ -39,7 +42,7 @@ function parseIRC(messageString) {
             metadata
         }
     } else {
-        return null;
+        return { type: "" };
     }
 }
 
@@ -59,7 +62,8 @@ function appendChatMsg(chatmsg) {
         if (err) console.error(err)
         const parser = new DOMParser();
         let chatobj = parser.parseFromString(str, 'text/html');
-        chatbox.appendChild(chatobj.body)
+        console.log(chatobj.body)
+        chatbox.appendChild(chatobj.body.childNodes[0])
         chatbox.scrollTop = chatbox.scrollHeight;
     })  
 }
